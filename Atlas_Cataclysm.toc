@@ -10,7 +10,7 @@
 ## Notes-zhCN: 大地的裂变地图
 ## Version: 1.32.00
 ## Author: arith, Dynaletik, dubcat, Resike
-## X-Date: Jul. XX, 2015
+## X-Date: Jul. 13, 2015
 ## X-Credits: Dan Gilbert, Lothaer
 ## X-Email: atlas.addon@gmail.com
 ## X-Website: http://www.atlasmod.com
