@@ -29,7 +29,7 @@
 ## Notes: Cataclysm Dungeon Maps
 ## Notes-zhTW: 浩劫與重生副本地圖模組
 #@end-debug@
-## Version: 1.39.00
+## Version: @project-date-iso@
 ## Author: arith, Dynaletik, dubcat
 ## X-Date: @project-date-iso@
 ## X-Credits: Dan Gilbert, Lothaer
