@@ -8,6 +8,11 @@ Copyright 2011 ~ 2017 - Arith Hsu, Atlas Team <atlas.addon at gmail dot com>
 = Change Log =
 ==============
 
+v1.41.01 (May 08, 2017)
+------------------------
+- Corrected ToC's version format
+
+
 v1.41.00 (Apr. 14, 2017)
 ------------------------
 - Added achievements
