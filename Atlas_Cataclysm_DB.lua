@@ -177,20 +177,24 @@ local myDB = {
 		{ "1'", 10003, 77, 165 };
 		{ "1'", 10003, 110, 165 };
 	};
-	TheDeadmines = {
-		{ 1, 89, 113, 287 }; -- Glubtok
-		{ 2, 90, 178, 399 }; -- Helix Gearbreaker
-		{ 3, 91, 228, 300 }; -- Foe Reaper 5000 
-		{ 4, 92, 397, 178 }; -- Admiral Ripsnarl
-		{ "4", 93, 400, 190 }; -- "Captain"Cookie
-		{ "4", 95, 416, 178 }; -- Vanessa VanCleef
-		{ "A", 10001, 54, 109 };
-		{ "B", 10002, 496, 234 };
-		{ "1'", 10003, 70, 166 };
-		{ "2'", 10004, 44, 159 };
-		{ "2'", 10004, 158, 399 };
-		{ "2'", 10004, 269, 291 };
-		{ "2'", 10004, 391, 203 };
+	TheDeadminesA = {
+		{ 1, 89, 186, 307 }; -- Glubtok
+		{ 2, 90, 262, 454 }; -- Helix Gearbreaker
+		{ 3, 91, 333, 333 }; -- Foe Reaper 5000 
+		{ "A", 10001, 87, 66 };
+		{ "B", 10002, 472, 175 };
+		{ "1'", 10004,  89, 139 }; -- Goblin Teleporter
+		{ "1'", 10004, 231, 466 }; -- Goblin Teleporter
+		{ "1'", 10004, 385, 320 }; -- Goblin Teleporter
+		{ "2'", 10003, 108, 149 };
+	};
+	TheDeadminesB = {
+		{ 4, 92, 324, 179 }; -- Admiral Ripsnarl
+		{ 4, 93, 306, 179 }; -- "Captain"Cookie
+		{ 4, 95, 304, 185 }; -- Vanessa VanCleef
+		{ "B", 10002, 192, 208 };
+		{ "C", 10003, 400, 193 };
+		{ "1'", 10004, 286, 225 }; -- Goblin Teleporter
 	};
 	TheDeadminesEnt = {
 		{ "A", 10001, 334, 20 }; -- Entrance

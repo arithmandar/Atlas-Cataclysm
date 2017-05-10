@@ -115,6 +115,7 @@ if L then
 	L["Quartermaster Lewis <Quartermaster>"] = "Quartermaster Lewis <Quartermaster>";
 	L["Miss Mayhem"] = "Miss Mayhem";
 	L["Vend-O-Tron D-Luxe"] = "Vend-O-Tron D-Luxe";
+	L["Goblin Teleporter"] = "Goblin Teleporter";
 
 	--The Stonecore
 	L["Earthwarden Yrsa <The Earthen Ring>"] = "Earthwarden Yrsa <The Earthen Ring>";

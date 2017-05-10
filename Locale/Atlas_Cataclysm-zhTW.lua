@@ -116,6 +116,7 @@ if L then
 	L["Quartermaster Lewis <Quartermaster>"] = "軍需官路易斯 <軍需官>";
 	L["Miss Mayhem"] = "暴行小姐";
 	L["Vend-O-Tron D-Luxe"] = "高級自動販賣機";
+	L["Goblin Teleporter"] = "哥布林傳送器";
 
 	--The Stonecore
 	L["Earthwarden Yrsa <The Earthen Ring>"] = "大地守望者伊爾薩 <陶土議會>";
