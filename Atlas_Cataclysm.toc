@@ -39,5 +39,5 @@
 ## RequiredDeps: Atlas
 
 Locale\Locales.xml
-Atlas_Cataclysm.lua
-Atlas_Cataclysm_DB.lua
+Core.lua
+Data.lua
