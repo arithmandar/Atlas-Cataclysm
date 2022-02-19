@@ -1332,8 +1332,7 @@ db.DropDownLayouts_Order = {
 		ATLAS_DDL_CONTINENT_DEEPHOLM,
 	},
 	[ATLAS_DDL_LEVEL] = {
-		ATLAS_DDL_LEVEL_80TO85,
-		ATLAS_DDL_LEVEL_85TO90,
+		ATLAS_DDL_LEVEL_30TO35,
 	},
 	[ATLAS_DDL_EXPANSION] = {
 		ATLAS_DDL_EXPANSION_CATA,
@@ -1406,7 +1405,7 @@ db.DropDownLayouts = {
 		},
 	},
 	[ATLAS_DDL_LEVEL] = {
-		[ATLAS_DDL_LEVEL_80TO85] = {
+		[ATLAS_DDL_LEVEL_30TO35] = {
 			"BlackrockMountainEnt",		-- Catalysm
 			"BlackrockCaverns",		-- Catalysm
 			"GrimBatol",			-- Catalysm
@@ -1415,8 +1414,6 @@ db.DropDownLayouts = {
 			"TheStonecore",			-- Catalysm
 			"TheVortexPinnacle",		-- Catalysm
 			"ThroneOfTheTides",		-- Catalysm
-		},
-		[ATLAS_DDL_LEVEL_85TO90] = {
 			"BaradinHold",			-- Catalysm
 			"BlackrockMountainEnt",		-- Catalysm
 			"BlackwingDescent",		-- Catalysm
