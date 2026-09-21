@@ -4,7 +4,7 @@
 	Atlas, a World of Warcraft instance map browser
 	Copyright 2005 ~ 2010 - Dan Gilbert <dan.b.gilbert@gmail.com>
 	Copyright 2010 - Lothaer <lothayer@gmail.com>, Atlas Team
-	Copyright 2011 ~ 2023 - Arith Hsu, Atlas Team <atlas.addon at gmail dot com>
+	Copyright 2011 ~ 2026 - Arith Hsu, Atlas Team <atlas.addon at gmail dot com>
 
 	This file is part of Atlas.
 
@@ -28,8 +28,6 @@ local AceLocale = LibStub:GetLibrary("AceLocale-3.0");
 local L = AceLocale:NewLocale("Atlas_Cataclysm", "deDE", false);
 
 if L then
---@localization(locale="deDE", format="lua_additive_table")@
---@do-not-package@
 --************************************************
 -- Zone Names, Acronyms, and Common Strings
 --************************************************
@@ -186,5 +184,4 @@ if L then
 	L["Mortaxx <The Tolling Bell>"] = "Mortaxx <Das Schlagen der Stunde>";
 	L["Tiki Lord Zim'wae"] = "Tikilord Zim'wae";
 	L["Zanzil's Cauldron of Burning Blood"] = "Zanzils Kessel des brennenden Blutes";
---@end-do-not-package@
 end
