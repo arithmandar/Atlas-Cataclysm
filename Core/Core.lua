@@ -1,8 +1,7 @@
--- $Id$
 --[[
 
 	Atlas, a World of Warcraft instance map browser
-	Copyright 2011 ~ 2026 - Arith Hsu, Atlas Team <atlas.addon at gmail dot com>
+	Copyright 2011 ~ 2026 - Arith Hsu, Atlas Team 
 
 	This file is part of Atlas.
 
@@ -29,11 +28,11 @@ local _G = getfenv(0)
 -- ----------------------------------------------------------------------------
 -- AddOn namespace.
 -- ----------------------------------------------------------------------------
-local FOLDER_NAME, private = ...
+local _, private = ...
 
 private.addon_name = "Atlas_Cataclysm"
 private.module_name = "Cataclysm"
 
 local LibStub = _G.LibStub
 local Atlas = LibStub("AceAddon-3.0"):GetAddon("Atlas")
-local Cata = Atlas:NewModule(private.module_name)
+local addon = Atlas:NewModule(private.module_name)
