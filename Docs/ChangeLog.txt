@@ -1,13 +1,18 @@
-$Id$
 Atlas, a World of Warcraft instance map browser
 Copyright 2005 ~ 2010 - Dan Gilbert <dan.b.gilbert@gmail.com>
 Copyright 2010 - Lothaer <lothayer@gmail.com>, Atlas Team
-Copyright 2011 ~ 2026 - Arith Hsu, Atlas Team <atlas.addon at gmail dot com>
+Copyright 2011 ~ 2026 - Arith Hsu, Atlas Team 
 
 ==============
 = Change Log =
 ==============
 
+v1.53.01 (Oct. 14, 2023)
+------------------------
+- Migrate from CurseForge SVN to GitHub
+- Added auto-packaging to support both CurseForge and WoWInterface
+- Removed maps that were originally in Kalimdor / Eastern Kingdoms as maps will be maintained in other map module
+  - ShadowfangKeep, The Deadmines
 v1.53.00 (Sep. 21, 2026)
 ------------------------
 - Toc update to support WoW 12.1.00 / 5.5.4 (Classic)

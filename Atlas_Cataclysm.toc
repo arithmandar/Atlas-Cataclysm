@@ -1,30 +1,30 @@
 ﻿## Interface: 50504, 120100
 ## Title: Atlas Cataclysm
 ## Notes: Cataclysm instance maps for Atlas
-## Title-deDE: Atlas: Cataclysm
+## Title-deDE: Atlas Cataclysm
 ## Notes-deDE: Instanzkarten aus Cataclysm für Atlas
-## Title-esES: Atlas: Cataclysm
-## Notes-esES: Mapas de mazmorras de Cataclysm para Atlas
-## Title-esMX: Atlas: Cataclysm
+## Title-esES: Atlas Cataclysm
+## Notes-esES: Mapas de instancias de Cataclysm para Atlas
+## Title-esMX: Atlas Cataclysm
 ## Notes-esMX: Mapas de instancias de Cataclysm para Atlas
-## Title-frFR: Atlas : Cataclysm
-## Notes-frFR: Cartes d’instances de Cataclysm pour Atlas
-## Title-itIT: Atlas: Cataclysm
+## Title-frFR: Atlas Cataclysm
+## Notes-frFR: Cartes des instances de Cataclysm pour Atlas
+## Title-itIT: Atlas Cataclysm
 ## Notes-itIT: Mappe delle istanze di Cataclysm per Atlas
-## Title-koKR: 아틀라스: 대격변
-## Notes-koKR: Atlas용 대격변 던전 지도
-## Title-ptBR: Atlas: Cataclysm
-## Notes-ptBR: Mapas de masmorras de Cataclysm para o Atlas
-## Title-ruRU: Атлас: Катаклизм
-## Notes-ruRU: Карты подземелий Cataclysm для Atlas
+## Title-koKR: Atlas 대격변
+## Notes-koKR: Atlas용 대격변 인스턴스 지도
+## Title-ptBR: Atlas Cataclysm
+## Notes-ptBR: Mapas de instâncias de Cataclysm para Atlas
+## Title-ruRU: Atlas Катаклизм
+## Notes-ruRU: Карты подземелий и рейдов Катаклизма для Atlas
 ## Title-zhCN: Atlas 大地的裂变
-## Notes-zhCN: 适用于 Atlas 的大地的裂变副本地图
-## Title-zhTW: Atlas: 浩劫與重生
-## Notes-zhTW: 適用於 Atlas 的浩劫與重生副本地圖
+## Notes-zhCN: Atlas 的大地的裂变副本地图
+## Title-zhTW: Atlas 浩劫與重生
+## Notes-zhTW: Atlas 的浩劫與重生副本地圖
 ## Version: @project-version@
 ## Author: arith
-## X-Date: @project-date-iso@
-## X-Credits: Dan Gilbert, Lothaer, Dynaletik, dubcat
+## IconTexture: Interface\WorldMap\WorldMap-Icon
+## RequiredDeps: Atlas
 ## Category: Map
 ## Category-deDE: Karte
 ## Category-esES: Mapa
@@ -37,8 +37,11 @@
 ## Category-zhCN: 地图
 ## Category-zhTW: 地圖
 ## X-Category: Map
-## RequiredDeps: Atlas
-## IconTexture: Interface\WorldMap\WorldMap-Icon
+## X-Credits: Dan Gilbert, Lothaer, Dynaletik, dubcat
+## X-Date: @project-date-iso@
+## X-Website: https://www.curseforge.com/wow/addons/atlas-cataclysm
+## X-Curse-Project-ID: 44905
+## X-WoWI-ID: 21647
 
 Locale\Locales.xml
 Core\Core.lua
