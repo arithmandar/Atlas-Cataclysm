@@ -1,18 +1,41 @@
 ﻿## Interface: 50504, 120100
-## Title: Atlas |r|cFF0099FF[Cataclysm]|r
-## Title-deDE: Atlas |r|cFF0099FF[Cataclysm]|r
-## Title-ruRU: Atlas |r|cFF0099FF[Cataclysm]|r
-## Title-zhCN: Atlas |r|cFF0099FF[大地的裂变]|r
-## Title-zhTW: |r|cFF0099FF[地圖]|rAtlas 浩劫與重生
-## Notes: Cataclysm Instances' Maps
-## Notes-deDE: Karten der Instanzen aus Cataclysm
-## Notes-ruRU: Карты подземелий Cataclysm
-## Notes-zhCN: 大地的裂变副本地图
-## Notes-zhTW: 浩劫與重生副本地圖模組
+## Title: Atlas Cataclysm
+## Notes: Cataclysm instance maps for Atlas
+## Title-deDE: Atlas: Cataclysm
+## Notes-deDE: Instanzkarten aus Cataclysm für Atlas
+## Title-esES: Atlas: Cataclysm
+## Notes-esES: Mapas de mazmorras de Cataclysm para Atlas
+## Title-esMX: Atlas: Cataclysm
+## Notes-esMX: Mapas de instancias de Cataclysm para Atlas
+## Title-frFR: Atlas : Cataclysm
+## Notes-frFR: Cartes d’instances de Cataclysm pour Atlas
+## Title-itIT: Atlas: Cataclysm
+## Notes-itIT: Mappe delle istanze di Cataclysm per Atlas
+## Title-koKR: 아틀라스: 대격변
+## Notes-koKR: Atlas용 대격변 던전 지도
+## Title-ptBR: Atlas: Cataclysm
+## Notes-ptBR: Mapas de masmorras de Cataclysm para o Atlas
+## Title-ruRU: Атлас: Катаклизм
+## Notes-ruRU: Карты подземелий Cataclysm для Atlas
+## Title-zhCN: Atlas 大地的裂变
+## Notes-zhCN: 适用于 Atlas 的大地的裂变副本地图
+## Title-zhTW: Atlas: 浩劫與重生
+## Notes-zhTW: 適用於 Atlas 的浩劫與重生副本地圖
 ## Version: @project-version@
 ## Author: arith
 ## X-Date: @project-date-iso@
 ## X-Credits: Dan Gilbert, Lothaer, Dynaletik, dubcat
+## Category: Map
+## Category-deDE: Karte
+## Category-esES: Mapa
+## Category-esMX: Mapa
+## Category-frFR: Carte
+## Category-itIT: Mappa
+## Category-koKR: 지도
+## Category-ptBR: Mapa
+## Category-ruRU: Карта
+## Category-zhCN: 地图
+## Category-zhTW: 地圖
 ## X-Category: Map
 ## RequiredDeps: Atlas
 ## IconTexture: Interface\WorldMap\WorldMap-Icon
