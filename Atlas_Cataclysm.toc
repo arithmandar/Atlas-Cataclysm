@@ -1,4 +1,4 @@
-﻿## Interface: 50504, 120100
+﻿## Interface: 50504, 120105
 ## Title: Atlas Cataclysm
 ## Notes: Cataclysm instance maps for Atlas
 ## Title-deDE: Atlas Cataclysm
