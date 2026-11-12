@@ -28,13 +28,15 @@ local _G = getfenv(0)
 local _, private = ...
 local LibStub = _G.LibStub
 local BZ = Atlas_GetLocaleLibBabble("LibBabble-SubZone-3.0")
-local BF = Atlas_GetLocaleLibBabble("LibBabble-Faction-3.0")
 local L = LibStub("AceLocale-3.0"):GetLocale(private.addon_name)
 local ALC = LibStub("AceLocale-3.0"):GetLocale("Atlas")
 ---@type AtlasAddon
 local Atlas = LibStub("AceAddon-3.0"):GetAddon("Atlas")
 ---@type AtlasDataModule
 local Cata = Atlas:GetModule(private.module_name)
+
+local faction = UnitFactionGroup("player")
+local isAlliance = (faction == "Alliance")
 
 local db = {}
 Cata.db = db
@@ -59,7 +61,7 @@ local function getBossName(bossname, encounterID, creatureIndex)
 end
 
 local function getCreatureName(creatureName, creatureID)
-	return getCreatureName(creatureName, creatureID)
+	return Atlas:GetCreatureName(creatureName, creatureID)
 end
 
 local function getQuestTitlebyID(title, id)
@@ -68,6 +70,10 @@ end
 
 local function getItemTitlebyID(title, id)
 	return Atlas:GetItemTitlebyID(title, id)
+end
+
+local function getFactionName(factionName, factionID)
+	return Atlas:GetFactionName(factionName, factionID)
 end
 
 -- local constants for easier access
@@ -84,6 +90,7 @@ local RARE = ALC["Rare"]
 local RANDOM = ALC["Random"]
 
 db.AtlasMaps = {
+	--[[
 	BlackrockMountainEnt = {
 		ZoneName = { BZ["Blackrock Mountain"]..L_PAREN..ENTRANCE..R_PAREN },
 		Location = { BZ["Searing Gorge"]..SLASH..BZ["Burning Steppes"] },
@@ -109,6 +116,7 @@ db.AtlasMaps = {
 		{ GREN.." 1') "..L["Meeting Stone"]..L_PAREN..BZ["Blackrock Depths"]..R_PAREN, 10011 },
 		{ GREN.." 2') "..L["Meeting Stone"]..L_PAREN..BZ["Lower Blackrock Spire"]..COMMA..BZ["Upper Blackrock Spire"]..R_PAREN, 10012 },
 	},
+	]]
 	BaradinHold = {
 		ZoneName = { BZ["Baradin Hold"] },
 		Location = { BZ["Tol Barad"] },
@@ -119,8 +127,10 @@ db.AtlasMaps = {
 		WorldMapID = 282,
 		JournalInstanceID = 75,
 		Module = "Atlas_Cataclysm",
-		{ ORNG..REPUTATION..COLON..BF["Baradin's Wardens"]..L_PAREN..FACTION_ALLIANCE..R_PAREN },
-		{ ORNG..REPUTATION..COLON..BF["Hellscream's Reach"]..L_PAREN..FACTION_HORDE..R_PAREN },
+		{ isAlliance and
+			ORNG..REPUTATION..COLON..getFactionName("Baradin's Wardens", 1177)..L_PAREN..FACTION_ALLIANCE..R_PAREN
+			or
+			ORNG..REPUTATION..COLON..getFactionName("Hellscream's Reach", 1178)..L_PAREN..FACTION_HORDE..R_PAREN },
 		{ BLUE.." A) "..ENTRANCE, 10001 },
 		{ WHIT.." 1) "..getBossName("Argaloth", 139), 139 },
 		{ WHIT.." 2) "..getBossName("Occu'thar", 140), 140 },
@@ -430,7 +440,7 @@ db.AtlasMaps = {
 		WorldMapID = 367,
 		JournalInstanceID = 78,
 		Module = "Atlas_Cataclysm",
-		{ ORNG..REPUTATION..COLON..BF["Avengers of Hyjal"] },
+		{ ORNG..REPUTATION..COLON..getFactionName("Avengers of Hyjal", 1204) },
 		{ BLUE.." A) "..ENTRANCE, 10001 },
 		{ GREN..INDENT..L["Lurah Wrathvine <Crystallized Firestone Collector>"] },
 		{ GREN..INDENT..L["Naresir Stormfury <Avengers of Hyjal Quartermaster>"] },
@@ -793,9 +803,10 @@ db.AtlasMaps = {
 		{ BLUE.." B) "..CONNECTION, 10002 },
 		{ WHIT.." 1) "..getBossName("Lady Naz'jar", 101), 101 },
 		{ WHIT.." 2) "..getBossName("Commander Ulthok, the Festering Prince", 102), 102 },
-		{ WHIT.." 3) "..getBossName("Erunak Stonespeaker").." & "..getBossName("Mindbender Ghur'sha", 103), 103 },
+		{ WHIT.." 3) "..getBossName("Mindbender Ghur'sha", 103), 103 },
+		{ WHIT..INDENT..getCreatureName("Erunak Stonespeaker", 40825) },
 		{ WHIT.." 4) "..getBossName("Ozumat", 104), 104 },
-		{ GREN..INDENT..L["Neptulon"] },
+		{ GREN..INDENT..getCreatureName("Neptulon", 40792) },
 		{ GREN.." 1') "..ALC["Teleporter"], 10003 },
 		{ "" },
 		{ LBLU..ACHIEVEMENTS..COLON },
@@ -933,6 +944,7 @@ db.AtlasMaps_NPC_DB = {
 		{ 3, 339, 249, 139 }, -- Alizabal, Mistress of Hate
 		{ "A", 10001, 252, 432 },
 	},
+	--[[
 	BlackrockMountainEnt = {
 		{ "A", 10001, 271, 182 },
 		{ "B", 10002, 255, 498},
@@ -947,6 +959,7 @@ db.AtlasMaps_NPC_DB = {
 		{ "1'", 10011, 281, 350},
 		{ "2'", 10012, 341, 391},
 	},
+	]]
 	BlackrockCaverns = {
 		{ 1, 105, 166, 311 }, -- Rom'ogg Bonecrusher
 		{ 2, 106, 143, 102 }, -- Corla, Herald of Twilight
@@ -1234,7 +1247,7 @@ db.AtlasMaps_NPC_DB = {
 	The table value is map's key-name.
 ]]
 db.AssocDefaults = {
-	[BZ["Blackrock Mountain"]] =		"BlackrockMountainEnt",
+	--[BZ["Blackrock Mountain"]] =		"BlackrockMountainEnt",
 	[BZ["Dragon Soul"]] =			"CoTDragonSoulA",
 	[BZ["The Deadmines"]] = 		"TheDeadminesA",
 	[BZ["Throne of Tides"]] = 		"ThroneOfTheTides",
@@ -1303,25 +1316,25 @@ db.SubZoneData = {
 	Not for localization.
 ]]
 db.OutdoorZoneToAtlas = {
-	[BZ["Burning Steppes"]] = 		"BlackrockMountainEnt",	-- Classic WoW, Catalysm, Draenor
-	[BZ["Searing Gorge"]] = 		"BlackrockMountainEnt",	-- Classic WoW, Catalysm, Draenor
+	--[BZ["Burning Steppes"]] = 		"BlackrockMountainEnt",	-- Classic WoW, Catalysm, Draenor
+	--[BZ["Searing Gorge"]] = 		"BlackrockMountainEnt",	-- Classic WoW, Catalysm, Draenor
 	[BZ["Tanaris"]] = 			"CavernsOfTimeEnt",	-- Burning Crusade, WoLTK, Catalysm
-	[BZ["Tol Barad"]] = 			"BaradinHold",
-	[BZ["The Dragon Wastes"]] = 		"CoTDragonSoulA",
-	[BZ["Mount Hyjal"]] = 			"Firelands",
+	[BZ["Tol Barad"]] = 		"BaradinHold",
+	[BZ["The Dragon Wastes"]] = "CoTDragonSoulA",
+	[BZ["Mount Hyjal"]] = 		"Firelands",
 	--[BZ["Silverpine Forest"]] = 		"ShadowfangKeep",
-	[BZ["Twilight Highlands"]] = 		"TheBastionOfTwilight",
-	[BZ["Abyssal Depths"]] = 		"ThroneOfTheTides",
-	[BZ["Abyssal Breach"]] = 		"ThroneOfTheTides",
+	[BZ["Twilight Highlands"]] = "TheBastionOfTwilight",
+	[BZ["Abyssal Depths"]] = 	"ThroneOfTheTides",
+	[BZ["Abyssal Breach"]] = 	"ThroneOfTheTides",
 	[BZ["Uldum"]] = 			"ThroneOfTheFourWinds",
 	[BZ["Deepholm"]] = 			"TheStonecore",
-	[BZ["Ghostlands"]] = 			"ZulAman",
+	[BZ["Ghostlands"]] = 		"ZulAman",
 	[BZ["Northern Stranglethorn"]] = 	"ZulGurub",
 }
 
 -- Entrance maps to instance maps
 db.EntToInstMatches = {
-	["BlackrockMountainEnt"] =		{"BlackrockCaverns","BlackwingDescent"},
+	--["BlackrockMountainEnt"] =		{"BlackrockCaverns","BlackwingDescent"},
 	["CavernsOfTimeEnt"] =			{"CoTDragonSoulA","CoTDragonSoulB","CoTDragonSoulC","CoTEndTime","CoTHourOfTwilight","CoTWellOfEternity"},
 	--["TheDeadminesEnt"] =			{"TheDeadminesA", "TheDeadminesB"},
 }
@@ -1374,7 +1387,7 @@ db.DropDownLayouts_Order = {
 db.DropDownLayouts = {
 	[ATLAS_DDL_CONTINENT] = {
 		[ATLAS_DDL_CONTINENT_EASTERN] = {
-			"BlackrockMountainEnt",		-- Classic WoW, Catalysm, Draenor
+			--"BlackrockMountainEnt",		-- Classic WoW, Catalysm, Draenor
 			--"TheDeadminesA",		-- Classic WoW, Catalysm
 			--"TheDeadminesB",		-- Classic WoW, Catalysm
 			--"TheDeadminesEnt",		-- Classic WoW, Catalysm
@@ -1410,7 +1423,7 @@ db.DropDownLayouts = {
 		[ATLAS_DDL_EXPANSION_CATA] = {
 			"BaradinHold",
 			"BlackrockCaverns",
-			"BlackrockMountainEnt",
+			--"BlackrockMountainEnt",
 			"BlackwingDescent",
 			"CavernsOfTimeEnt",
 			"CoTDragonSoulA",
@@ -1438,7 +1451,7 @@ db.DropDownLayouts = {
 	},
 	[ATLAS_DDL_LEVEL] = {
 		[ATLAS_DDL_LEVEL_30TO35] = {
-			"BlackrockMountainEnt",		-- Catalysm
+			--"BlackrockMountainEnt",		-- Catalysm
 			"BlackrockCaverns",		-- Catalysm
 			"GrimBatol",			-- Catalysm
 			"HallsOfOrigination",		-- Catalysm
@@ -1447,7 +1460,6 @@ db.DropDownLayouts = {
 			"TheVortexPinnacle",		-- Catalysm
 			"ThroneOfTheTides",		-- Catalysm
 			"BaradinHold",			-- Catalysm
-			"BlackrockMountainEnt",		-- Catalysm
 			"BlackwingDescent",		-- Catalysm
 			"CavernsOfTimeEnt",		-- Catalysm
 			"CoTDragonSoulA",		-- Catalysm
@@ -1469,7 +1481,7 @@ db.DropDownLayouts = {
 	},
 	[ATLAS_DDL_PARTYSIZE] = {
 		[ATLAS_DDL_PARTYSIZE_5] = {
-			"BlackrockMountainEnt",		-- Catalysm
+			--"BlackrockMountainEnt",		-- Catalysm
 			"BlackrockCaverns",		-- Catalysm
 			"CavernsOfTimeEnt",		-- Catalysm
 			"CoTEndTime",			-- Catalysm
@@ -1491,7 +1503,7 @@ db.DropDownLayouts = {
 		[ATLAS_DDL_PARTYSIZE_10] = {
 			"BaradinHold",			-- Catalysm
 			"TheBastionOfTwilight",		-- Catalysm
-			"BlackrockMountainEnt",		-- Catalysm
+			--"BlackrockMountainEnt",		-- Catalysm
 			"BlackwingDescent",		-- Catalysm
 			"CavernsOfTimeEnt",		-- Catalysm
 			"CoTDragonSoulA",		-- Catalysm
@@ -1503,7 +1515,7 @@ db.DropDownLayouts = {
 		[ATLAS_DDL_PARTYSIZE_20TO40] = {
 			"BaradinHold",			-- Catalysm
 			"TheBastionOfTwilight",		-- Catalysm
-			"BlackrockMountainEnt",		-- Catalysm
+			--"BlackrockMountainEnt",		-- Catalysm
 			"BlackwingDescent",		-- Catalysm
 			"CavernsOfTimeEnt",		-- Catalysm
 			"CoTDragonSoulA",		-- Catalysm
@@ -1541,7 +1553,7 @@ db.DropDownLayouts = {
 		},
 		[ATLAS_DDL_TYPE_ENTRANCE] = {
 			"CavernsOfTimeEnt",		-- Catalysm
-			"BlackrockMountainEnt",		-- Catalysm
+			--"BlackrockMountainEnt",		-- Catalysm
 			--"TheDeadminesEnt",		-- Catalysm
 		},
 	},
